@@ -34,8 +34,11 @@ class IssueService extends Service {
     return true;
   }
 
-  findAll() {
-    return this.model.find();
+  findAll(filter) {
+    return this.model.find({
+      ...(filter.title ? { title: filter?.title } : {}),
+      ...(filter.description ? { titldescriptione: filter?.description } : {}),
+    });
   }
 
   findById(id) {

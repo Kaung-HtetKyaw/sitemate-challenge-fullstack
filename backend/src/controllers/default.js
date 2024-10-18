@@ -23,7 +23,9 @@ class Controller {
 
   async getList(req, res, next) {
     try {
-      const documents = await this.#service.findAll();
+      const { title, description } = req.query;
+
+      const documents = await this.#service.findAll({ title, description });
 
       return res.status(200).json(documents);
     } catch (error) {
