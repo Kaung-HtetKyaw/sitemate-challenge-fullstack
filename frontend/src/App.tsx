@@ -22,7 +22,7 @@ function App(): ReactElement {
     queryKey: [GetAllIssuesQueryKey],
     queryFn: () => getAllIssues()
   })
-  console.log(data)
+
   const { mutate: createIssueApi } = useMutation({
     mutationFn: createIssue,
     onSuccess: () => {
