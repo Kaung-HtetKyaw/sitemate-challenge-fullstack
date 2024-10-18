@@ -14,7 +14,7 @@ const create = validateRequest({
       }),
     description: z
       .string({ required_error: 'The description is required' })
-      .min(50, {
+      .min(10, {
         message: 'Description must be at least 50 characters long',
       })
       .max(200, {
@@ -47,7 +47,7 @@ const update = validateRequest({
       }),
     description: z
       .string({ required_error: 'The description is required' })
-      .min(50, {
+      .min(10, {
         message: 'Description must be at least 50 characters long',
       })
       .max(200, {

@@ -25,7 +25,7 @@ class Controller {
     try {
       const documents = await this.#service.findAll();
 
-      return res.status(200).json({ data: documents });
+      return res.status(200).json(documents);
     } catch (error) {
       res.status(500).json({ message: 'ERROR', error: error.message });
     }
@@ -40,9 +40,7 @@ class Controller {
         return res.status(404).json({ message: 'Issue not found!' });
       }
 
-      res.status(200).json({
-        data: foundDocument,
-      });
+      res.status(200).json(foundDocument);
     } catch (error) {
       res.status(500).json({ message: 'ERROR', error: error.message });
     }
@@ -56,7 +54,7 @@ class Controller {
         return res.status(404).json({ message: 'Issue not found!' });
       }
 
-      res.status(200).json({ data: foundDocument });
+      res.status(200).json(foundDocument);
     } catch (error) {
       res.status(500).json({ message: 'ERROR', error: error.message });
     }
